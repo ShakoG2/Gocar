@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js" defer ></script>
+</head>
+<body>
+<div class="header-container" id="header">
+    <section class="first-section">
+        <div class="price-type-select" id="price-type-select">
+            <div class="price-title">ფასი</div>
+            <div class="input-container">
+                <input id="price-type" class="price-type" type="text" readonly value="ფასი კლებადობით">
+                <div id="arrow-selection" class="arrow-selection"></div>
+                <div id="arrow-selection-up" class="arrow-selection-up"></div>
+                <div id="select-options" class="select-options">
+                    <div  class="options"><p id="pTag">ფასი ზრდადობით</p></div>
+                    <div  class="options"><p >ახალი დამატებული</p></div>
+                    <div  class="options"><p>ფასი კლებადობით</p></div>
+                    <div  class="options"><p>ფასი ზრდადობით</p></div>
+                    <div  class="options"><p>ახალი დამატებული</p></div>
+                    <div  class="options"><p>ფასი კლებადობით</p></div>
+                </div>
+            </div>
+        </div>
+        <div class="cars-type-select" id="cars-type-select">
+            <div class="cars-type-title">მანქანის ტიპები</div>
+            <div class="input-container">
+                <input type="text" class="cars-types-input" id="cars-types-input"  value="ნებისმიერი">
+                <div id="cars-arrow-selection" class="cars-arrow-selection"></div>
+                <div id="cars-arrow-selection-up" class="cars-arrow-selection-up"></div>
+                <div id="cars-types-select-options" class="cars-types-select-options" >
+                    <div id="car-type-search" class="car-type-search">
+                        <input type="search" class="type-search" id="type-search">
+<!--                        <button class="search-button"><i class="fa fa-search"></i></button>-->
+                    </div>
+
+<!--                    <div  class="car-option"><p>ჯიპი</p></div>-->
+<!--                    <div  class="car-option"><p >სედანი</p></div>-->
+                    <div  class="car-option"><p>ზილი</p></div>
+                    <div  class="car-option"><p>პიკაპი</p></div>
+                    <div  class="car-option"><p>ევაკუატორი</p></div>
+                    <div  class="car-option"><p>სპორტი</p></div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="second-section">
+        <div class="date-container">
+            <div class="date-title">საიდან</div>
+            <div class="date-and-time">
+                <input class="date" readonly type="text" value="22/08/2020">
+                <input class="time" readonly type="text" value="12:00">
+            </div>
+        </div>
+    </section>
+    <section class="third-section"></section>
+
+</div>
+</body>
+
+</html>
