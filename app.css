@@ -209,13 +209,13 @@ section{
     width: 217px;
     height: 50px;
     font: normal normal normal 16px/18px Helvetica Neue;
-    z-index: 8;
+    /* z-index: 8; */
 }
 .car-type-search{
     width: 217px;
     height: 50px;
     font: normal normal normal 16px/18px Helvetica Neue;
-    z-index: 8;
+    /* z-index: 8; */
     display: flex;
     /*position: fixed;*/
 }
@@ -256,15 +256,27 @@ section{
     background-color: #EDF0F0;
     font: normal normal normal 16px/18px Helvetica Neue;
 }
-.type-search-icon{
+.search-icon-div{
     background-image: url('/icons/Icons\ -\ Search.svg');
-    background-position: right 15px center;
     background-repeat: no-repeat;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    margin-left: 190px;
+    text-align: center;
+    margin-top: 17px;
+    position: fixed;
 }
-.type-search-reset-icon{
+.reset-icon-div{
+    width: 27px;
+    height: 27px;
     background-image: url('/icons/Close.svg');
-    background-position: right 15px center;
+    text-align: center;
     background-repeat: no-repeat;
+    position: absolute;
+    margin-left: 165px;
+    margin-top: 15px;
+    position: fixed;
 }
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {

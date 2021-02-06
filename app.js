@@ -26,6 +26,7 @@ const arrowSelectionUp=document.querySelector("#arrow-selection-up");
 inpContainer.addEventListener('click',function (){
     selection1.style.display='block';
     // inputPriceType.setAttribute('class','price-type-class');
+    inputPriceType.style.border='1px solid #5FD36C';
     arrowSelection.setAttribute('class','arrow-selection-class');
     arrowSelectionUp.setAttribute('class','arrow-selection-up-class');
 })
@@ -43,7 +44,8 @@ const selectOptionsDiv=document.querySelector('.cars-types-select-options');
 const carsTrOne=document.querySelector('#cars-arrow-selection');
 const carTrTwo=document.querySelector('#cars-arrow-selection-up');
 carsInput.addEventListener('click',function (){
-    selectOptionsDiv.style.display='block'
+    selectOptionsDiv.style.display='block';
+    carsInput.style.border='1px solid #5FD36C';
     // carsInput.setAttribute('class','price-type-class');
     typeSearch.classList.remove('type-search-reset-icon');
     typeSearch.classList.add('type-search-icon');
@@ -55,7 +57,7 @@ window.addEventListener('click',(e)=>{
     const searchField=document.querySelector('#car-type-search')
     if(!select.contains(e.target)&!searchField.contains(e.target)){
         selectOptionsDiv.style.display='none';
-        // carsInput.style.borderColor='white';
+        carsInput.style.borderColor='white';
         carsTrOne.classList.remove('cars-t-arrow-selection');
         carTrTwo.classList.remove('cars-t-arrow-selection-up');
     }else{
@@ -77,17 +79,18 @@ for(let i=0;i<carSelections.length;i++){
 
     })
 }
+const iconsDiv=document.querySelector('.search-icon-div');
 typeSearch.addEventListener('keyup',function (){
     const carSelections=document.getElementById("car-selection-div");
     const selections=document.querySelectorAll('.car-option')
-    typeSearch.classList.remove('type-search-icon');
-    typeSearch.classList.add('type-search-reset-icon');
+    // iconsDiv.classList.remove('search-icon-div');
+    // iconsDiv.setAttribute('class','reset-icon-div');
     for(let sel of selections){
         if(!sel.textContent.includes(typeSearch.value)){
             sel.style.display='none';
             if(typeSearch.value==="")
-                typeSearch.classList.remove('type-search-reset-icon');
-                typeSearch.classList.add('type-search-icon');
+                // typeSearch.classList.remove('type-search-reset-icon');
+                // typeSearch.classList.add('type-search-icon');
                 sel.style.display='block';
                 sel.style.backgroundColor="white";
                 sel.addEventListener('mouseover',()=>{
@@ -102,5 +105,20 @@ typeSearch.addEventListener('keyup',function (){
             for (let sel of selections){
                 sel.style.display='block';
             }
+           
         }
+})
+
+const resetIcon=document.querySelector('#search-icon-div');
+// if(resetIcon.className==='search-icon-div'){
+//     resetIcon.addEventListener('click',()=>{
+//         typeSearch.value="";
+//     })
+// }
+resetIcon.addEventListener('click',()=>{
+    if(resetIcon.className==='search-icon-div'){
+        typeSearch.value="";
+    }else{
+        return;
+    }
 })
