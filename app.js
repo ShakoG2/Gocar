@@ -79,18 +79,19 @@ for(let i=0;i<carSelections.length;i++){
 
     })
 }
-const iconsDiv=document.querySelector('.search-icon-div');
+const searchIconsDiv=document.querySelector('.search-icon-div');
+const resetIconsDiv=document.querySelector('.reset-icon-div');
+resetIconsDiv.style.display='none';
 typeSearch.addEventListener('keyup',function (){
     const carSelections=document.getElementById("car-selection-div");
-    const selections=document.querySelectorAll('.car-option')
-    // iconsDiv.classList.remove('search-icon-div');
+    const selections=document.querySelectorAll('.car-option');
     // iconsDiv.setAttribute('class','reset-icon-div');
     for(let sel of selections){
         if(!sel.textContent.includes(typeSearch.value)){
+            searchIconsDiv.style.display='none';
+            resetIconsDiv.style.display='block';
             sel.style.display='none';
             if(typeSearch.value==="")
-                // typeSearch.classList.remove('type-search-reset-icon');
-                // typeSearch.classList.add('type-search-icon');
                 sel.style.display='block';
                 sel.style.backgroundColor="white";
                 sel.addEventListener('mouseover',()=>{
@@ -105,10 +106,22 @@ typeSearch.addEventListener('keyup',function (){
             for (let sel of selections){
                 sel.style.display='block';
             }
-           
+            searchIconsDiv.style.display='block';
+            resetIconsDiv.style.display='none';
         }
 })
 
+resetIconsDiv.addEventListener('click',()=>{
+    typeSearch.value="";
+    const selections=document.querySelectorAll('.car-option');
+    if(typeSearch.value===""){
+        for (let sel of selections){
+            sel.style.display='block';
+        }
+        searchIconsDiv.style.display='block';
+        resetIconsDiv.style.display='none';
+    }
+})
 const resetIcon=document.querySelector('#search-icon-div');
 // if(resetIcon.className==='search-icon-div'){
 //     resetIcon.addEventListener('click',()=>{
